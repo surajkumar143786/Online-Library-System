@@ -19,7 +19,7 @@ const AddBook = () => {
         category: 'Fiction',
         description: '',
         rating: 4.0,
-        coverImage: '/book-covers/default.jpg'
+        coverImage: 'https://m.media-amazon.com/images/I/81BE7eeKzAL._AC_UF1000,1000_QL80_.jpg'
     });
 
     const [errors, setErrors] = useState({});
@@ -201,7 +201,7 @@ const AddBook = () => {
                     {/* Cover Image */}
                     <div>
                         <label className="block text-gray-700 font-semibold mb-2">
-                            Cover Image URL
+                            Cover Image URL *
                         </label>
                         <input
                             type="text"
@@ -209,8 +209,12 @@ const AddBook = () => {
                             value={formData.coverImage}
                             onChange={handleChange}
                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="/book-covers/default.jpg"
+                            placeholder="https://example.com/book-cover.jpg"
+                            required
                         />
+                        <p className="text-xs text-gray-500 mt-1">
+                            Enter a valid image URL (e.g., from Amazon, Unsplash)
+                        </p>
                     </div>
                 </div>
 
@@ -231,6 +235,26 @@ const AddBook = () => {
                     {errors.description && (
                         <p className="text-red-500 text-sm mt-1">{errors.description}</p>
                     )}
+                </div>
+
+                {/* Preview */}
+                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 className="font-semibold text-gray-700 mb-2">Cover Preview:</h3>
+                    <div className="flex items-center gap-4">
+                        <img
+                            src={formData.coverImage}
+                            alt="Preview"
+                            className="w-24 h-32 object-cover rounded border"
+                            onError={(e) => {
+                                e.target.src = 'https://via.placeholder.com/150x200/3b82f6/ffffff?text=No+Image';
+                            }}
+                        />
+                        <div>
+                            <p className="text-sm text-gray-600">
+                                Image will appear like this in book cards
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Submit Button */}
