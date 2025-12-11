@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import BookCard from '../components/BookCard';
+import BookCard from '../components/Bookcard';
 import SearchBar from '../components/SearchBar';
 import CategoryList from '../components/CategoryList';
 

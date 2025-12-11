@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CategoryList from '../components/CategoryList';
-import BookCard from '../components/BookCard';
+import BookCard from '../components/Bookcard';
 import { setBooks } from '../redux/booksSlice';
 import booksData from '../data/booksData';
 

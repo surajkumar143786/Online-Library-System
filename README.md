@@ -17,3 +17,5 @@ A modern online library system built with React, Redux, Tailwind CSS, and React 
 1. Clone the repository:
 ```bash
 git clone https://github.com/surajkumar143786/Online-Library-System.git
+2. npm install
+3. npm run dev
